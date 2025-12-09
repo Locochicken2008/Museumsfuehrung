@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtueller Paläontologie-Rundgang</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="museum-header">
+        <h1>Die Ära der Giganten</h1>
+        <p>Virtuelle Fossilien-Ausstellung</p>
+    </header>
+
+    <main class="museum-hall">
+        
+        <nav id="fossil-navigation" class="exhibit-nav">
+            <h2 class="nav-title">Ausstellungshalle </h2>
+            <ul class="fossil-list">
+                <li><button class="fossil-btn" onclick="zeigeFossil('t-rex')">T-Rex</button></li>
+                <li><button class="fossil-btn" onclick="zeigeFossil('brontosaurus')">Brontosaurus</button></li>
+                <li><button class="fossil-btn" onclick="zeigeFossil('mosasaurus')">Mosasaurus</button></li>
+                <li><button class="fossil-btn" onclick="zeigeFossil('pterodaktylus')">Pterodaktylus</button></li>
+                <li><button class="fossil-btn" onclick="zeigeFossil('allosaurus')">Allosaurus</button></li>
+                <li><button class="fossil-btn" onclick="zeigeFossil('ammonit')">Ammonit</button></li>
+                </ul>
+        </nav>
+
+        <section id="fossil-display" class="exhibit-display">
+            <div id="fossil-details" class="fossil-details-panel">
+                <h2 class="welcome-heading">Ausstellungshalle-Fossilien</h2>
+               
+                
+                <div class="fossil-preview-image">
+                    <img src="./bilder/images.jpeg" alt="Blick in eine Museumshalle mit Dinosaurierskeletten">
+                </div>
+
+                
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="museum-footer">
+        <p>3D Modelle von sketchfab | Gemacht von Louis und Pascal </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

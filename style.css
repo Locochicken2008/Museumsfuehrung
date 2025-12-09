@@ -1,0 +1,222 @@
+/* --- 1. Allgemeine Basis und Farben --- */
+:root {
+    --bg-dark: #1e1e1e;       /* Dunkler Hintergrund (Museumswand) */
+    --text-light: #f0f0f0;    /* Helle Standard-Schrift */
+    --accent-gold: #c3b091;   /* Goldene/cremige Akzentfarbe (Informationstafeln) */
+    --accent-dark: #333;      /* Dunkle Akzente für Ränder */
+    --font-serif: 'Playfair Display', Georgia, serif; /* Klassische Überschrift */
+    --font-sans: Arial, sans-serif; /* Lesbare Navigation/Text */
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* --- 2. Header (Eingangshalle) --- */
+.museum-header {
+    background-color: var(--accent-dark);
+    color: var(--accent-gold);
+    padding: 30px 5%;
+    text-align: center;
+    border-bottom: 3px solid var(--accent-gold);
+}
+
+.museum-header h1 {
+    font-family: var(--font-serif);
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.museum-header p {
+    font-style: italic;
+    color: var(--text-light);
+}
+
+/* --- 3. Haupt-Layout (Ausstellungshalle) --- */
+.museum-hall {
+    display: flex;
+    max-width: 1400px; /* Maximale Breite wie eine große Halle */
+    margin: 20px auto;
+    background-color: #282828; /* Etwas helleres Grau für den Innenbereich */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Tiefe geben */
+    min-height: 80vh;
+}
+
+/* --- 4. Navigation (Ausstellungsgang) --- */
+.exhibit-nav {
+    width: 250px;
+    padding: 20px;
+    background-color: var(--accent-dark);
+    border-right: 1px solid var(--bg-dark);
+    flex-shrink: 0;
+}
+
+.nav-title {
+    font-family: var(--font-serif);
+    color: var(--accent-gold);
+    border-bottom: 1px solid var(--accent-gold);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.fossil-list {
+    list-style: none;
+    padding: 0;
+}
+
+.fossil-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 10px;
+    margin-bottom: 8px;
+    background-color: #444; /* Dunkle Tafel-Farbe */
+    color: var(--text-light);
+    border: 1px solid var(--accent-gold);
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1em;
+    font-family: var(--font-sans);
+}
+
+.fossil-btn:hover, .fossil-btn:focus {
+    background-color: var(--accent-gold); /* Beim Hovern hervorheben */
+    color: var(--bg-dark);
+    border-color: #fff;
+}
+
+/* --- 5. Haupt-Display (Exponat-Bereich) --- */
+.exhibit-display {
+    flex-grow: 1;
+    padding: 40px;
+}
+
+.fossil-details-panel {
+    background-color: #333; /* Der Hintergrund der Exponatfläche */
+    padding: 30px;
+    border: 5px double var(--accent-gold); /* Gerahmter Look */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.welcome-heading, .fossil-details-panel h2 {
+    font-family: var(--font-serif);
+    color: var(--accent-gold);
+    font-size: 2em;
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Startseiten-Bild-Styling */
+.fossil-preview-image {
+    text-align: center;
+    margin: 30px 0;
+    border: 1px solid var(--accent-gold);
+    padding: 10px;
+    background-color: #2a2a2a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.fossil-preview-image img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Entfernt zusätzlichen Platz unter dem Bild */
+    margin: 0 auto; /* Zentriert das Bild */
+}
+
+.image-caption {
+    font-style: italic;
+    color: #bbb;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+
+/* Inhalte des Fossils (Text, Bild, Video) */
+.fossil-content {
+    display: flex;
+    flex-wrap: wrap; /* Erlaubt Umbruch auf kleineren Bildschirmen */
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.text-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 50%;
+}
+
+.text-info h3 {
+    font-family: var(--font-serif);
+    color: var(--accent-gold);
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.media-area {
+    flex: 1;
+    min-width: 300px;
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.media-area img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #777;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.media-area iframe {
+    width: 100%;
+    /* Höhe ändert sich je nach Bildschirmgröße, 16:9 Verhältnis beibehalten */
+    aspect-ratio: 16 / 9; 
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* --- 6. Footer --- */
+.museum-footer {
+    text-align: center;
+    padding: 15px;
+    background-color: var(--accent-dark);
+    color: #888;
+    font-size: 0.8em;
+    border-top: 1px solid #444;
+}
+
+/* Für kleinere Bildschirme (Mobile) */
+@media (max-width: 800px) {
+    .museum-hall {
+        flex-direction: column; /* Stapeln der Navigation über dem Display */
+    }
+    .exhibit-nav {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--accent-gold);
+    }
+    .fossil-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .fossil-list li {
+        margin: 5px;
+    }
+    .fossil-btn {
+        width: auto;
+    }
+    .text-info, .media-area {
+        max-width: 100%;
+        min-width: unset;
+    }
+}
